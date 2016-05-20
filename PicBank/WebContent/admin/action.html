@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Index/Action</title>
+<script src="../js/getQueryString.js"></script>
+</head>
+<body>
+<div style='font-size:22px;width: 98%;height:80px;line-height: 80px;border: solid 1px lightblue;top:35%;position: absolute;margin:0 auto;text-align: center;box-shadow: 5px 5px 5px #CCCCCC;'>
+<span id="msg"></span>
+<span id='time' style='color:red;font-weight: bolder'></span>
+ 秒后进行跳转
+ </div>
+<script>
+var action=getQueryString("action");
+var url="";
+var dely_time=5;
+var msg=document.getElementById("msg");
+var time=document.getElementById("time");
+if(action=="regSuccess"){
+    msg.innerHTML="添加用户成功,";
+    url="AdminUserListServlet"
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="regFailed"){
+    msg.innerHTML="添加用户失败(请检查用户名),";
+    url="_addPeople.jsp"
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="editSuccess"){
+    msg.innerHTML="编辑用户成功,";
+    url="AdminUserListServlet"
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="editFailed"){
+    msg.innerHTML="编辑用户失败,";
+    url="AdminUserListServlet"
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="editNullFailed"){
+    msg.innerHTML="编辑用户失败(请检查输入项),";
+    url="AdminUserListServlet"
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="deleteUserSuccess"){
+    msg.innerHTML="删除成功,";
+    url="AdminUserListServlet"
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="deleteUserFailed"){
+    msg.innerHTML="删除失败,";
+    url="AdminUserListServlet"
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else{
+	window.location.href="index";
+}
+//倒计时
+function delayURL(url) {
+    var delay=document.getElementById("time").innerHTML;
+    if(delay>0){
+        delay--;
+        document.getElementById("time").innerHTML=delay;
+    }else{
+        window.top.location.href=url;
+    }
+    setTimeout("delayURL('" + url + "')", 1000);//此处1000毫秒即每一秒跳转一次
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Index/Action</title>
+<script src="js/getQueryString.js"></script>
+</head>
+<body>
+<div style='font-size:22px;width: 98%;height:80px;line-height: 80px;border: solid 1px lightblue;top:35%;position: absolute;margin:0 auto;text-align: center;box-shadow: 5px 5px 5px #CCCCCC;'>
+<span id="msg"></span>
+<span id='time' style='color:red;font-weight: bolder'></span>
+ 秒后进行跳转
+ </div>
+<script>
+var action=getQueryString("action");
+var url="index.jsp";
+var dely_time=3;
+var msg=document.getElementById("msg");
+var time=document.getElementById("time");
+if(action=="regSuccess"){
+	//document.write("<div style='font-size:22px;width: 98%;height:80px;line-height: 80px;border: solid 1px lightblue;top:35%;position: absolute;margin:0 auto;text-align: center;box-shadow: 5px 5px 5px #CCCCCC;'>注册成功, <span id='time' style='color:red;font-weight: bolder'>"+dely_time+"</span> 秒后进行跳转</div>");
+    msg.innerHTML="注册成功,";
+    time.innerHTML=dely_time;
+    url="index.jsp#login";
+	delayURL(url);
+}else if(action=="regFailed"){
+    msg.innerHTML="注册失败(用户名重复),";
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="regFull"){
+    msg.innerHTML="注册失败(请正确填写用户名和密码),";
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="loginBaned"){
+	msg.innerHTML="登陆失败(账户已被禁用),";
+    time.innerHTML=dely_time;
+    url="index.jsp#login";
+	delayURL(url);
+}else if(action=="loginFailed"){
+	msg.innerHTML="登陆失败(请检查你的登录名和密码),";
+    time.innerHTML=dely_time;
+    url="index.jsp#login";
+	delayURL(url);
+}else if(action=="loginNull"){
+	msg.innerHTML="登陆失败(请检查你的登录名和密码),";
+    time.innerHTML=dely_time;
+    url="index.jsp#login";
+	delayURL(url);
+}else if(action=="uploadSuccess"){
+	msg.innerHTML="上传成功,";
+	url="upload.jsp";
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else if(action=="uploadFailed"){
+	msg.innerHTML="上传失败,";
+	url="upload.jsp";
+    time.innerHTML=dely_time;
+	delayURL(url);
+}else{
+	window.location.href="index.jsp";
+}
+//倒计时
+function delayURL(url) {
+    var delay=document.getElementById("time").innerHTML;
+    if(delay>0){
+        delay--;
+        document.getElementById("time").innerHTML=delay;
+    }else{
+        window.top.location.href=url;
+    }
+    setTimeout("delayURL('" + url + "')", 1000);//此处1000毫秒即每一秒跳转一次
+}
+</script>
+</body>
+</html>

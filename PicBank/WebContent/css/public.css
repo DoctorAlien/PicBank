@@ -1,0 +1,40 @@
+*{margin:0;padding: 0;}
+a{text-decoration: none;}
+a:hover{text-decoration: none;cursor: pointer}
+ul li{list-style:none}
+/*上传文件界面*/
+#header{padding:35px 15px;background-color: skyblue;color: #ffffff;font-size: 24px;}
+#header a{color:#ffffff;font-size: 1em}
+#content{margin: 15px;padding-top:20px;color:#c3c3c3;text-align: center;font-size: 3em;border: dotted 8px #ccc;border-radius: 8px;height: 500px}
+/*用户登录注册界面*/
+.index-login{text-align: center;white-space: nowrap;}
+.index-login-main{min-height: 510px;text-align: center;white-space: normal;margin: auto;padding: 100px 0;width: 300px;}
+.index-login-main:before{content: '';display: inline-block;vertical-align: middle;}
+.tab-title a{color:#8c8c8c;text-decoration: none;font-size: 20px;padding:0 6px}
+.tab-title a:hover{color: #000;text-decoration: none;}
+.form-ctrl-login{border:solid 1px #ccc;border-radius: 3px;margin:15px 0;}
+.login-main-body input{border: 0;padding:10px;box-shadow: none;}
+.login-main-body input:focus{border: 0;box-shadow: none;outline:transparent;box-sizing: border-box;}
+.form-reg-style{padding:10px 0;border-bottom: solid 1px #ccc}
+.view-part{border-bottom: 3px solid skyblue;color:skyblue !important;}
+.user-header{background-color: #4184f3;box-shadow: 5px 5px 5px #ccc;width: 100%;text-align: center}
+.user-header img{height:188px;width:188px;border-radius: 50%;line-height: 188px;margin-top: 25px;margin-bottom: 35px;}
+.user-header span{padding: 15px;}
+.user-header a{color: #ccc;font-size: 18px;text-decoration: none;}
+.user-header a:hover{color: white;}
+#power-off:hover{color:#FF60AF;cursor: pointer}
+#pic-look:hover,#pic-edit:hover{color:skyblue;cursor: pointer}
+/*基本图床*/
+.user-basic{border:solid 1px #8c8c8c;border-radius: 5px;padding:25px;margin: 10px 50px;height: 290px;text-align: left}
+/*图片瀑布流*/
+.tiles-wrap {position: relative;margin: 10px 0;padding: 0;list-style-type: none;display: none;}
+.tiles-wrap li {display: block;opacity: 0;text-align: center;list-style-type: none;background-color: #fff;float: left;cursor: pointer;width: 200px;padding: 4px;}
+.tiles-wrap.animated li {-webkit-transition: all 0.3s ease-out;-moz-transition: all 0.3s ease-out;-o-transition: all 0.3s ease-out;transition: all 0.3s ease-out;}
+.tiles-wrap li {opacity: 1;}
+.tiles-wrap li.wookmark-inactive {visibility: hidden;opacity: 0;}
+.tiles-wrap li:hover {background-color: #fafafa;}
+.tiles-wrap img {display: block;}
+.tiles-wrap a {color: #555;text-align: center;width: 200px;height: 200px;font-size: 2em;font-weight: bold;text-decoration: none;}
+.tile-loading:after {display: block;position: absolute;left: 0;right: 0;top: 0;bottom: 0;background-color: #ddd;content: "Loading\2026";padding-top: 20px;color: #999;}
+/**/
+.user-content-header{position: relative;padding: 15px 10px 0px 20px;height: 65px;background: #fbfbfb;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);}
